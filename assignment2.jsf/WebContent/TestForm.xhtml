@@ -1,0 +1,32 @@
+<body xmlns:h="http://java.sun.com/jsf/html"
+      xmlns:f="http://java.sun.com/jsf/core">
+
+	<div align="center">
+	Hello #{user.firstName} #{user.lastName}. Your orders are:
+	<br/> 
+	
+	<!-- JSF Data Table of the Orders -->
+	<h:dataTable value="#{orders.listOfOrders}" var="order" styleClass = "orderTable" headerClass = "orderTableHeader" rowClasses = "orderTableOddRow,orderTableEvenRow">
+		<h:column> 
+			<f:facet name="header">Order Number</f:facet>
+			#{order.orderNumber}
+		</h:column>
+		<h:column> 
+			<f:facet name="header">Product Name</f:facet>
+			#{order.productName}
+		</h:column>
+		<h:column> 
+			<f:facet name="header">Price</f:facet>
+			#{order.price}
+		</h:column>
+		<h:column> 
+			<f:facet name="header">Quantity</f:facet>
+			#{order.quantity}
+		</h:column>
+	</h:dataTable>
+
+	
+	<!-- button that navigates the user back to the TestForm page -->
+	<h:button outcome="TestForm.xhtml" value="Test Form" />
+	</div>
+</body>
