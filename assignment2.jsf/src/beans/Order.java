@@ -1,5 +1,8 @@
 package beans;
 
+import javax.faces.bean.ManagedBean;
+
+@ManagedBean
 public class Order {
 	private String orderNumber = ""; 
 	private String productName =""; 
